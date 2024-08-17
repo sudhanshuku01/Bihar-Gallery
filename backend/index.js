@@ -17,8 +17,8 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
-    methods: "GET,POST,PUT,DELETE",
+    origin: ["https://www.bihargallery.com", "https://bihargallery.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
