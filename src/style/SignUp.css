@@ -1,0 +1,140 @@
+.signup {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10px;
+}
+.signup-container {
+  width: 320px;
+  padding: 20px;
+  background: #ffffff;
+  margin: auto auto;
+}
+.signup-container h1 {
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #191b26;
+}
+.signup-container-form .normal label,
+.signup-container-form .eye label,
+.signup-container .username label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+}
+.signup-container-form .username div {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.signup-container-form .username input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Work Sans";
+}
+.signup-container-form .eye div p {
+  font-size: 18px;
+  cursor: pointer;
+  color: #191b26;
+}
+.signup-container-form .username input:focus,
+.signup-container-form .normal input:focus {
+  border-color: #191b26;
+}
+.signup-container-form .normal input {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Work Sans";
+}
+.signup-container-form button {
+  font-weight: 300;
+  font-size: 16px;
+  width: -webkit-fill-available;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.signup-container-form button:disabled {
+  filter: brightness(0.8);
+}
+.signup-container-form .eye div {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.signup-container-form .eye div:focus-within {
+  border-color: #191b26;
+}
+.signup-container-form .eye div input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Work Sans";
+}
+.signup-container-form .eye div p {
+  font-size: 18px;
+  cursor: pointer;
+  color: #191b26;
+}
+.signup-container-loginlink {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.signup-container-loginlink p {
+  font-weight: 400;
+  font-size: 15px;
+  color: #00ab6b;
+}
+.signup-container-loginlink a {
+  margin-left: 4px;
+  color: #00ab6b;
+}
+.signup-container-googlelogin {
+  margin: 20px 0px;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgba(25, 27, 38, 0.2);
+}
+
+@media only screen and (max-width: 400px) {
+  .signup-container {
+    width: 280px;
+  }
+}

@@ -1,0 +1,113 @@
+.login {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.login-container {
+  width: 320px;
+  padding: 20px;
+  background: #ffffff;
+  margin: auto auto;
+}
+.login-container h1 {
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* .login-container-form {
+} */
+.login-container-form .normalinput label,
+.login-container-form .eyeinput label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+}
+.login-container-form .normalinput input {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Work Sans";
+}
+.login-container-form .normalinput input:focus {
+  border: 1px solid #191b26;
+}
+
+.login-container-form button {
+  font-weight: 300;
+  font-size: 16px;
+  width: -webkit-fill-available;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.login-container-form button:disabled {
+  filter: brightness(0.8);
+}
+.login-container-form .eyeinput div {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.login-container-form .eyeinput div:focus-within {
+  border: 1px solid #191b26;
+}
+.login-container-form .eyeinput div input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Work Sans";
+}
+.login-container-form .eyeinput div p {
+  font-size: 18px;
+}
+/* -------------------------------------- */
+.login-container-signuplink {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.login-container-signuplink p {
+  font-weight: 400;
+  font-size: 15px;
+  color: #00ab6b;
+}
+.login-container-signuplink a {
+  color: #00ab6b;
+  margin-left: 4px;
+}
+.login-container-googlelogin {
+  margin: 20px 0px;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgba(25, 27, 38, 0.2);
+}
+
+@media only screen and (max-width: 400px) {
+  .login-container {
+    width: 280px;
+  }
+}

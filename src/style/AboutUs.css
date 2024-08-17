@@ -1,0 +1,39 @@
+.about-us {
+  margin: 0 auto;
+  padding: 50px 20px;
+  max-width: 800px;
+  line-height: 24px;
+}
+
+.about-us-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-us-header h1 {
+  font-size: 30px;
+  color: #191b26;
+  font-weight: 600;
+}
+
+.about-us-content p {
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.about-us-content a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.about-us-content a:hover {
+  text-decoration: underline;
+}
+
+.about-us-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #999;
+}

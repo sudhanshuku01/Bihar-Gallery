@@ -1,0 +1,82 @@
+.image-container {
+}
+
+.image-container-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  padding: 10px;
+}
+.image-container-grid .wide {
+  grid-column: span 2;
+}
+.image-container-grid .tall {
+  grid-row: span 2;
+}
+.image-container-grid .big {
+  grid-row: span 2;
+  grid-row: span 2;
+}
+
+.image-container-grid-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.image-container-grid-item:hover img {
+  filter: brightness(0.8);
+}
+.image-container-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.image-container-grid-item-sm-device-download {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+}
+.image-container-grid-item-sm-device-download img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  background: white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.image-container-button {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.image-container-button button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.image-container-button button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 500px) {
+  .image-container-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

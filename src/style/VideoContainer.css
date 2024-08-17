@@ -1,0 +1,62 @@
+.video-container {
+  padding: 10px;
+}
+.video-container-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+.video-container-grid .wide {
+  grid-column: span 2;
+}
+.video-container-grid .tall {
+  grid-row: span 2;
+}
+.video-container-grid .big {
+  grid-row: span 2;
+  grid-row: span 2;
+}
+
+.video-container-grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container-grid-item video {
+  max-width: 100%;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.video-container-button {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.video-container-button button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.video-container-button button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media only screen and (max-width: 500px) {
+  .video-container-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

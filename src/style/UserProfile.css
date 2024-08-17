@@ -1,0 +1,184 @@
+.userprofile {
+  position: relative;
+}
+.userprofile-header {
+  height: 200px;
+  background: #14bc7d;
+}
+.userprofile-content {
+  position: relative;
+  width: 80%;
+  padding: 40px;
+  margin: auto;
+  border-radius: 20px;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+  margin-top: -90px;
+  background: #ffffff;
+}
+.userprofile-content-main {
+  margin-top: -100px;
+}
+.userprofile-content-main-general {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userprofile-content-main-general img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  padding: 6px;
+  background: white;
+  border-radius: 79px;
+  margin-bottom: 15px;
+}
+.userprofile-content-main-general h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+.userprofile-content-main-general p {
+  font-weight: 400;
+  font-size: 18px;
+}
+.userprofile-content-main-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.userprofile-content-main-location p {
+  font-weight: 300;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.userprofile-content-main-about p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.userprofile-content-main-instagram {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.userprofile-content-main-instagram p {
+  font-weight: 300;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #191b26;
+  cursor: pointer;
+}
+
+.userprofile-post {
+  padding: 10px;
+}
+.userprofile-post h1 {
+  font-weight: 600;
+  font-size: 28px;
+  margin: 20px 0px;
+}
+.userprofile-post-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  padding: 10px;
+}
+.userprofile-post-container .wide {
+  grid-column: span 2;
+}
+.userprofile-post-container .tall {
+  grid-row: span 2;
+}
+.userprofile-post-container .big {
+  grid-row: span 2;
+  grid-row: span 2;
+}
+
+.userprofile-post-container-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.userprofile-post-container-item:hover img {
+  filter: brightness(0.8);
+}
+.userprofile-post-container-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.userprofile-post-container-item p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  gap: 4px;
+  padding: 2px;
+}
+.userprofile-post-container-item video {
+  width: 100%;
+  height: 100%;
+}
+.userprofile-post-button {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.userprofile-post-button button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.userprofile-post-button button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+.userprofile-content-edit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.userprofile-content-logout {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .userprofile-content {
+    width: 95%;
+    padding: 40px 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .userprofile-post-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

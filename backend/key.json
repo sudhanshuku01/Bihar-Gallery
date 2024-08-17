@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "unified-mender-426413-g4",
+  "private_key_id": "f8d9353ad037c2987f9c46fdea768cee0b79afd6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDRO+y4Se85DEIm\nJrhnUJxC7YEUsLmavsaw/MgRA6Ejjf6PM8lz0aK1w/9R3Kp7aV5haspQ5xQJs4R2\nHDK7g0NxpLvmXz3Qgg1JNZ+YRhFffYz+Nzpme/M+L1r7F/xoWuwglppxbC87Cbhv\nPaxRkDfctQ8dYkTrdregeWLq/rKMhgI900RDntWtQRK5uwAEj3zqyco5+QPxvnWc\nov7/dlrUcK3J2+wacMoQZFpF9Zrj2/2zE72+vPb3pWWFtOWXdmCl3JA3KcJBDAth\nTnBYTKle7V6YAg43BrRcDyD+Ksss2Mi/PYlrtojCdAusBemzCzYTfJo6ivkHgHES\nFqHXvZpHAgMBAAECggEAIC9IlXyB+NOC5V11ZicHMmBYR7d7hWstIxJvL/bP9akk\n7CA6L7+ieLVCc/QuoTcvFmsX3eP9uBROHuDtiNyDJlsBsEkcOBOZOZavCvxUNc0Z\nQA18xUDxxLICG7ev0tmRkt23uhS7Gyi+nxXsiMtXXHLZdVqlYVbsnhmt9pnhGy5G\nuQt62VmUVQA7oWtF2zFBfpjL4gMYRFva7sulq7dyiHM5JMiDOXhBNf8uhaWiZv2c\ngdEfH7+9540axeoA6RC5ceVLT1VgtJC/OlwYAjiklC4C4kQHd6JrrgZGS0ArnLXm\nTUfaG0fK1puARMEa2s1xrFy4Ru2TrmkpRXPDUSDHiQKBgQDr6B3Gzzd5zTUf1unf\n4HGTIT0dRyFpPux0OGnkEPRqwl93YMaj+JKtJ79/nikpyTlmHJad2OBdDJY2Urc8\nnn7KBJSusiL+8I7c+EpmIYsdoyk1YrZ2759UeQlk7Jqth7FU4IAj32dSxaOckw8T\nqswYqJK6ncKcUJqEg5ujUvgaywKBgQDjDjgE/Qok+7zN2DRcCNCr9LZi4NaU2Ked\nbEiieixaRay2Ukmrhqu9HXRC+siBIyrR6F6Tpf+aeCzcsU7Mn9enoOGP4urHBf76\nEeE3Bt8IoI3QxzaSO+ctFj5umkYryvQHYYrAJs+Z+u0oeC7xJ9rYmp6Wqd1MB9vz\nwMKjLZci9QKBgQC1eT8GxDsp0KlwT9Rj63WTODuaPTC/lK8zDH6w+jX7toDYBbNp\nSfwThgMzegiyY2BrY8ydqsuV6OvY6DKbSFXCtFloNhLjyUwtQjeBb4ZkCzLVJZW1\n0snfoqiOYdDvcvYAlB8e+Wmza+Rbu2kauQX+ZhdRxbCCrSLgk5lzv4yqlwKBgQCa\nZpLloYUCfUV43StN4pi0NmbIeoixE1t4C6ihBF+gy3yVRwPd5mhm496ppYwvdNCr\niU63LMzSKCKpuNETCSdHUHnStMZerM8lEn+KQdvtK/EEJlQPwTiFSnkOEU7ifNLR\nKh2GaV4HIcGgIYoaZ7XEUfDCF6TrDPUfntc8y8XY+QKBgQDUdrHXgq0dg8mSLVDJ\nnPxS5oq/cJMPuPMbcqiVW7FCTSjPIJ5jEO/RO97HIECGRdleAXOBQ9d7CnB8/xz+\nIf6gIywIztag8COjM0xjGQpu43/mQDlnsbskjnHoJdQEIlaK6ciSYBoIVWrKPNc5\nsAdBH6Fjdcr2gT/IGfCRHOSBrw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bihar-gallery@unified-mender-426413-g4.iam.gserviceaccount.com",
+  "client_id": "114135203095592558134",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bihar-gallery%40unified-mender-426413-g4.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

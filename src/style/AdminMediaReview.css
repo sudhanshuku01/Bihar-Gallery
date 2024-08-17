@@ -1,0 +1,71 @@
+.adminmediareview {
+}
+.adminmediareview h1 {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 28px;
+}
+.adminmediareview-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  padding: 10px;
+}
+.adminmediareview-container .wide {
+  grid-column: span 2;
+}
+.adminmediareview-container .tall {
+  grid-row: span 2;
+}
+.adminmediareview-container .big {
+  grid-row: span 2;
+  grid-row: span 2;
+}
+
+.adminmediareview-container-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminmediareview-container-item p {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  filter: drop-shadow(2px 4px 6px black);
+  top: 0;
+  left: 5px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.adminmediareview-container-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.adminmediareview-container-item img:hover {
+ filter: brightness(0.8);
+}
+.adminmediareview-container-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.adminmediareview-container-item video:hover{
+  filter: brightness(0.8);
+}
+@media only screen and (max-width: 500px) {
+  .adminmediareview-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

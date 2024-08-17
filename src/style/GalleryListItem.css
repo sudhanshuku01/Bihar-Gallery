@@ -1,0 +1,67 @@
+.gallerylistitem {
+  padding: 20px 10px;
+  position: relative;
+}
+.gallerylistitem ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  justify-content: center;
+  gap: 20px;
+}
+/* .gallerylistitem ul li {
+ 
+} */
+.gallerylistitem ul li a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #656f79;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 20px;
+  gap: 6px;
+}
+.gallerylistitem ul li a:hover,
+.gallerylistitem ul li a.active {
+  background: #f7f7f7;
+}
+.gallerylistitem > p {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  z-index: 998;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 25px;
+}
+.gallerylistitem > p:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.gallerylistitem > p:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .gallerylistitem ul {
+    overflow: scroll;
+    justify-content: flex-start;
+  }
+  .gallerylistitem ul::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .gallerylistitem > p {
+    display: flex;
+  }
+}

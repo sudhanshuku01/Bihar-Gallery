@@ -1,0 +1,82 @@
+.updateuser {
+  padding: 20px;
+  position: absolute;
+  background: #ffffff;
+  z-index: 99;
+  top: 60px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.updateuser-close {
+}
+
+.updateuser-close span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #0e0e0e;
+  position: relative;
+  cursor: pointer;
+}
+
+.updateuser-close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.updateuser-close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.updateuser-image {
+  text-align: center;
+}
+.updateuser-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 60px;
+  border: 5px solid #14bc7d;
+}
+.updateuser form {
+}
+.updateuser form button {
+  font-weight: 300;
+  font-size: 16px;
+  width: -webkit-fill-available;
+  border: none;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #14bc7d;
+  padding: 10px;
+  margin-top: 10px;
+}
+.updateuser form > div {
+}
+.updateuser form > div label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+}
+.updateuser form > div input {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Work Sans";
+}
+.updateuser form > div input:focus {
+  border-color: #191b26;
+}

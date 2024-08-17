@@ -1,0 +1,75 @@
+.googleauth {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 28px;
+  cursor: pointer;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  transition: all 0.3s ease;
+}
+.googleauth:hover {
+  background: #3474e0;
+}
+.googleauth:hover h2 {
+  color: #ffffff;
+}
+.googleauth p {
+  color: #191b26;
+}
+.googleauth h2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #191b26;
+}
+.googleauthcomplete {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10px;
+  height: 100vh;
+}
+.googleauthcomplete .content {
+  width: 320px;
+  padding: 20px;
+  background: #ffffff;
+  margin: auto auto;
+}
+.googleauthcomplete .content h2 {
+    margin-bottom: 50px;
+}
+
+.googleauthcomplete .content input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Work Sans";
+}
+.googleauthcomplete .content div {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.googleauthcomplete .content button {
+  font-weight: 300;
+  font-size: 16px;
+  width: -webkit-fill-available;
+  border: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}

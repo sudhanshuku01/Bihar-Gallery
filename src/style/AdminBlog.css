@@ -1,0 +1,119 @@
+.adminblog {
+  padding: 20px;
+}
+.adminblog > h1 {
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 30px 0px;
+}
+
+/* .adminblog-createpost {
+}
+.adminblog-createpost h2 {
+} */
+.adminblog .blogeditor {
+}
+.adminblog .blogeditor .title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+  margin: 10px 0px;
+}
+.adminblog-createpost .imagepick {
+  margin: 10px 0px;
+  text-align: center;
+}
+.adminblog-createpost .imagepick img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.adminblog-createpost .imagepick p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+  margin: 10px 0px;
+}
+.adminblog-createpost .imagepick button {
+  display: block;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  background: #656f79;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.adminblog-createpost form {
+  padding: 20px;
+}
+.adminblog-createpost form button {
+  width: -webkit-fill-available;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  background: #656f79;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.adminblog-createpost form .form-group img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  padding: 4px;
+  border-radius: 50px;
+  box-shadow: 0 0 2px #000000;
+}
+/* .adminblog-createpost form .form-group {
+} */
+.adminblog-createpost form .form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #191b26;
+  margin-bottom: 4px;
+}
+.adminblog-createpost form .form-group input {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Work Sans";
+}
+.adminblog-createpost form .form-group input:focus {
+  border-color: #191b26;
+}
+.adminblog-createpost form .form-group textarea {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(25, 27, 38, 0.2);
+  padding: 10px 12px;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Work Sans";
+}
+.adminblog-createpost form .form-group textarea:focus {
+  border-color: #191b26;
+}

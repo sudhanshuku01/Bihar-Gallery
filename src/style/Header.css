@@ -1,0 +1,110 @@
+.header {
+  display: flex;
+  position: relative;
+  height: 70px;
+  align-items: center;
+  padding: 10px;
+  background: #ffffff;
+  border-bottom: 1px solid #ceced2;
+}
+.header-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.header-title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+}
+.header-ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 15px;
+}
+.header-ul li {
+  padding: 2px;
+}
+.header-ul li a {
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  font-size: 16px;
+  color: #656f79;
+  border-radius: 30px;
+}
+.header-ul li a:hover,
+.header-ul li a.active {
+  background: #f7f7f7;
+}
+.header-ul-smallscreen {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+  animation: slideIn 0.5s ease-in-out;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+.header-ul-smallscreen li {
+  text-align: center;
+  margin: 10px 0px;
+}
+.header-ul-smallscreen li a {
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 10px;
+  color: #656f79;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  border-radius: 8px;
+}
+.header-ul-smallscreen li a:hover {
+  background: #f7f7f7;
+}
+.header-ul-menubar {
+  cursor: pointer;
+}
+.header-ul-menubar span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px 0px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: 9px;
+  background-color: #656f79;
+}
+
+.header-ul-menubar.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header-ul-menubar.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-ul-menubar.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    background-color: #000000;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    background-color: #ffffff;
+  }
+}

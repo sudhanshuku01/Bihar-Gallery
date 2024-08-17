@@ -1,0 +1,63 @@
+.home-hero {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  justify-content: space-evenly;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+.home-hero-left {
+  padding: 20px;
+}
+
+.home-hero-left-content {
+}
+.home-hero-left-content h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 32px;
+  font-size: 30px;
+}
+.home-hero-left-content p {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 24px;
+  margin: 30px 0px;
+}
+.home-hero-left-content button {
+  border: none;
+  outline: none;
+  background: #00ab6b;
+  color: #ffffff;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home-hero-left-content button:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+.home-hero-right {
+  padding: 10px;
+}
+.home-hero-right img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 160px;
+}
+@media only screen and (max-width: 800px) {
+}
+@media only screen and (max-width: 500px) {
+  .home-hero {
+    padding: 60px 10px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .home-hero-right img {
+    width: 250px;
+    height: 250px;
+  }
+}
