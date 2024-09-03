@@ -125,10 +125,10 @@ export const LoginController = async (req, res) => {
       });
     }
 
-    if (user.googleId != null) {
+    if (user.password === null) {
       return res.status(400).send({
         success: false,
-        message: "Login with google",
+        message: "Please continue with google",
       });
     }
 

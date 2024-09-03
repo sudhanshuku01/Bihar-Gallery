@@ -1,24 +1,22 @@
-.welcome {
-  padding: 20px;
+.welcome-gallery {
+  margin-bottom: 60px;
 }
-.welcome-intro .intro h2,
-.welcome-blog .intro h2,
-.welcome-gallery .intro h2 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  line-height: 24px;
-  font-size: 20px;
-  margin-bottom: 20px;
+.welcome-gallery > h1 {
+  border-top: 1px solid #ceced2;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-weight: 500;
+  font-size: 30px;
+  padding: 30px 0px;
 }
-.welcome-intro .intro p,
-.welcome-blog .intro p,
-.welcome-gallery .intro p {
-  font-weight: 400;
-  margin-bottom: 15px;
-  line-height: 18px;
+.welcome-blog{
+  margin-bottom: 60px;
 }
-
-.welcome-blog .content > h1 {
-  font-weight: 600;
-  font-size: 18px;
+.welcome-blog > h1 {
+  border-top: 1px solid #ceced2;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-weight: 500;
+  font-size: 30px;
+  padding: 30px 0px;
 }

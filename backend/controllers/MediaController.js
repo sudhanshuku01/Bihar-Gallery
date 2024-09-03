@@ -83,7 +83,7 @@ export const GetAllImages = async (req, res) => {
   try {
     const { page } = req.query || 1;
 
-    const limit = 1;
+    const limit = 5;
     const totalCount = await Media.countDocuments({
       mediaType: { $regex: /^image\// },
       isReviewed: true,
@@ -136,7 +136,7 @@ export const GetAllImages = async (req, res) => {
 export const GetAllVideos = async (req, res) => {
   try {
     const { page } = req.query || 1;
-    const limit = 10;
+    const limit = 5;
     const totalCount = await Media.countDocuments({
       mediaType: { $regex: /^video\// },
       isReviewed: true,
@@ -185,7 +185,7 @@ export const GetAllVideos = async (req, res) => {
 export const GetMediaByCreatorUserName = async (req, res) => {
   try {
     const page = req.query.page || 1;
-    const limit = 1;
+    const limit = 5;
     const { userName } = req.params;
     const user = await User.findOne({ userName });
     if (!user) {
@@ -237,7 +237,7 @@ export const GetAllMedia = async (req, res) => {
   try {
     const { page } = req.query || 1;
 
-    const limit = 1;
+    const limit = 5;
 
     const totalCount = await Media.countDocuments({
       isReviewed: true,
@@ -290,7 +290,7 @@ export const AdminGetAllMedia = async (req, res) => {
   try {
     const page = req.body.page || 1;
 
-    const limit = 10;
+    const limit = 5;
 
     const totalCount = await Media.countDocuments({});
 
