@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Dispatch, SetStateAction, useCallback, useMemo, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -8,27 +9,33 @@ interface blogeditorProps {
 const BlogEditor: React.FC<blogeditorProps> = ({ html, setHtml }) => {
   const quill = useRef<ReactQuill | null>(null);
 
-  const imageHandler = useCallback(() => {
-    // Prompt user for the image URL
-    const imageUrlKey = prompt("Enter the URL of the image");
+  const imageHandler = useCallback(async () => {
+    const imageUrlKey = prompt("Enter the URL key of the image");
 
     if (imageUrlKey && quill.current) {
-      const quillEditor = quill.current.getEditor();
-      const range = quillEditor.getSelection(true);
-      quillEditor.insertEmbed(
-        range.index,
-        "image",
-        `${
-          import.meta.env.VITE_API_BASE_URL
-        }/api/blog/getImage?key=${imageUrlKey}`
-      );
+      try {
+        const response = await axios.get(
+          `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/blog/getImage?key=${imageUrlKey}`
+        );
+
+        const signedUrl = response.data;
+
+        const quillEditor = quill.current.getEditor();
+        const range = quillEditor.getSelection(true);
+
+        quillEditor.insertEmbed(range.index, "image", signedUrl);
+      } catch (error) {
+        console.error("Error fetching or inserting image:", error);
+      }
     }
   }, []);
 
   const handleEditorChange = (content: string) => {
     setHtml(content);
   };
-
+  console.log(html);
   const modules = useMemo(() => {
     return {
       toolbar: {

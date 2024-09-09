@@ -6,7 +6,7 @@ import "./db/Connection.js";
 import AuthRoute from "./routes/AuthRoute.js";
 import MediaRoute from "./routes/MediaRoute.js";
 import BlogRoute from "./routes/BlogRoute.js";
-
+import { redisClient } from "./Redis.js";
 dotenv.config();
 
 const app = express();
@@ -23,6 +23,26 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(async (req, res, next) => {
+  try {
+    await redisClient.incr("visitor_count");
+    next();
+  } catch (err) {
+    console.error("Error updating visitor count", err);
+    next();
+  }
+});
+
+app.get("/api/visitor-count", async (req, res) => {
+  try {
+    const count = await redisClient.get("visitor_count");
+    res.status(200).json({ visitors: count || 0 });
+  } catch (err) {
+    console.error("Error retrieving visitor count", err);
+    res.status(500).json({ message: "Failed to retrieve visitor count" });
+  }
+});
 
 app.get("/", (req, res) => {
   res.send("server running nicely!");

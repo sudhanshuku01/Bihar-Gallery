@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "../../layout/Layout";
 import { useNavigate, useParams } from "react-router-dom";
 import { BlogDataTypes } from "../general/Blog";
@@ -12,16 +12,54 @@ import { AiFillDelete } from "react-icons/ai";
 import BlogEditor from "../admin/BlogEditor";
 
 const BlogPage = () => {
+  const contentRef = useRef<HTMLDivElement | null>(null);
   const [auth] = useAuth();
   const navigate = useNavigate();
   const { slugTitle } = useParams();
   const [data, setData] = useState<BlogDataTypes | null>(null);
-  const [isediting, setIsediting] = useState<boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [tags, setTags] = useState<string>("");
   const [html, setHtml] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
+  useEffect(() => {
+    const updateImageSources = async () => {
+      if (contentRef.current) {
+        const images = contentRef.current.querySelectorAll("img");
+        images.forEach(async (img) => {
+          const originalSrc = img.getAttribute("src");
+          console.log(originalSrc);
+
+          // Extract the path from the URL
+          if (originalSrc) {
+            const urlParts = new URL(originalSrc);
+            let path = urlParts.pathname;
+
+            if (path.startsWith("/bihar-gallery/")) {
+              path = path.substring("/bihar-gallery/".length);
+            }
+
+            console.log(path);
+
+            try {
+              const response = await axios.get(
+                `${
+                  import.meta.env.VITE_API_BASE_URL
+                }/api/blog/getImage?key=${path}`
+              );
+              img.setAttribute("src", response.data);
+            } catch (error) {
+              console.error("Error fetching signed URL:", error);
+            }
+          }
+        });
+      }
+    };
+
+    updateImageSources();
+  }, [html]);
 
   const fetchGetPost = async () => {
     try {
@@ -32,9 +70,11 @@ const BlogPage = () => {
         setData(response.data.post);
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching post data:", error);
     }
   };
+
+  // Delete blog post
   const postDelete = async () => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this post?"
@@ -56,6 +96,7 @@ const BlogPage = () => {
     }
   };
 
+  // Update blog post
   const postUpdate = async () => {
     try {
       const response = await axios.put(
@@ -69,24 +110,18 @@ const BlogPage = () => {
       );
       if (response && response.data.success) {
         toastMessage(response.data.message);
-        setIsediting(false);
+        setIsEditing(false);
         fetchGetPost();
       } else {
         toastMessage(response.data.message);
       }
     } catch (error: any) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        toastMessage(error.response.data.message);
-      } else {
-        toastMessage("Something went wrong!");
-      }
-      console.log(error);
+      const errorMessage =
+        error?.response?.data?.message || "Something went wrong!";
+      toastMessage(errorMessage);
     }
   };
+
   const toastMessage = (msg: string, icon?: string) => {
     toast(msg, {
       icon: icon,
@@ -99,7 +134,7 @@ const BlogPage = () => {
   };
 
   useEffect(() => {
-    if (data === null) {
+    if (!data) {
       fetchGetPost();
     } else {
       setTitle(data.title);
@@ -118,21 +153,15 @@ const BlogPage = () => {
         setIsAdmin(true);
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error checking admin status:", error);
     }
   };
+
   useEffect(() => {
-    if (auth.user) {
+    if (auth?.user?._id) {
       checkAdmin(auth.user._id);
     }
   }, [auth]);
-
-  // const getImageUrl = async (key: string) => {
-  //   const response = await axios.get(
-  //     `${import.meta.env.VITE_API_BASE_URL}/api/blog/getImage?key=${key}`
-  //   );
-  //   return response.data;
-  // };
 
   return (
     <Layout
@@ -150,27 +179,26 @@ const BlogPage = () => {
       <div className="blogpage">
         <div className="blogpage-content">
           {data && (
-            <>
-              <div dangerouslySetInnerHTML={{ __html: data.html }} />
-            </>
+            <div ref={contentRef} dangerouslySetInnerHTML={{ __html: html }} />
           )}
         </div>
         {auth.user && isAdmin && (
           <>
-            {isediting && (
+            {isEditing && (
               <div className="blogpage-editorial">
                 <BlogEditor html={html} setHtml={setHtml} />
                 <div className="basicinfo">
                   <div>
-                    <label htmlFor="">Title</label>
+                    <label htmlFor="title">Title</label>
                     <input
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
                       type="text"
+                      id="title"
                     />
                   </div>
                   <div>
-                    <label htmlFor="">Description</label>
+                    <label htmlFor="description">Description</label>
                     <textarea
                       id="description"
                       value={description}
@@ -179,28 +207,29 @@ const BlogPage = () => {
                     ></textarea>
                   </div>
                   <div>
-                    <label htmlFor="">Tags</label>
+                    <label htmlFor="tags">Tags</label>
                     <input
                       value={tags}
                       onChange={(e) => setTags(e.target.value)}
                       type="text"
+                      id="tags"
                     />
                   </div>
                 </div>
               </div>
             )}
             <div className="blogpage-editorialbuttons">
-              {isediting ? (
+              {isEditing ? (
                 <>
                   <button onClick={postUpdate}>Submit</button>
-                  <button onClick={() => setIsediting(false)}>Cancel</button>
+                  <button onClick={() => setIsEditing(false)}>Cancel</button>
                 </>
               ) : (
                 <>
                   <p onClick={postDelete}>
                     <AiFillDelete />
                   </p>
-                  <p onClick={() => setIsediting(true)}>
+                  <p onClick={() => setIsEditing(true)}>
                     <FaEdit />
                   </p>
                 </>

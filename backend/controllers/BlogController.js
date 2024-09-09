@@ -145,10 +145,7 @@ export const GetImageByKey = async (req, res) => {
     return res.status(200).send(url);
   } catch (error) {
     console.log(error);
-    res.status(500).json({
-      success: false,
-      message: "server error",
-    });
+    res.status(500).send(null);
   }
 };
 
