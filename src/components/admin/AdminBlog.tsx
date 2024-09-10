@@ -56,7 +56,6 @@ const AdminBlog: React.FC = () => {
       setLoading(false);
     }
   };
-  console.log(html);
   const toastMessage = (msg: string, icon?: string) => {
     toast(msg, {
       icon: icon,

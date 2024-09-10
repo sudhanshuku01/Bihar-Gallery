@@ -4,13 +4,26 @@
 .blogpage-content h1 {
 }
 .blogpage-content h2 {
+  font-size: 26px;
 }
 .blogpage-content h3 {
-  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.blogpage-content h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.blogpage-content img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 .blogpage-content p {
   line-height: 22px;
   margin-bottom: 10px;
+  word-spacing: 1px;
+  font-size: 16px;
 }
 .blogpage-editorial {
   padding: 20px;

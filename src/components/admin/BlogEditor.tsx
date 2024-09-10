@@ -35,7 +35,6 @@ const BlogEditor: React.FC<blogeditorProps> = ({ html, setHtml }) => {
   const handleEditorChange = (content: string) => {
     setHtml(content);
   };
-  console.log(html);
   const modules = useMemo(() => {
     return {
       toolbar: {

@@ -83,19 +83,6 @@ export const GetAllImages = async (req, res) => {
   try {
     const { page } = req.query || 1;
 
-    const cacheKey = `images_page_${page}`; // Use page-specific cache keys
-
-    const cachedData = await redisClient.get(cacheKey);
-
-    if (cachedData) {
-      return res.status(200).json({
-        success: true,
-        totalPages: JSON.parse(cachedData).totalPages,
-        Data: JSON.parse(cachedData).Data,
-        cache: true,
-      });
-    }
-
     const limit = 5;
     const totalCount = await Media.countDocuments({
       mediaType: { $regex: /^image\// },
@@ -136,13 +123,6 @@ export const GetAllImages = async (req, res) => {
       })
     );
 
-    // Store the result in Redis with a timeout (TTL) of 1 hour (3600 seconds)
-    await redisClient.setEx(
-      cacheKey,
-      3600,
-      JSON.stringify({ totalPages, Data })
-    );
-
     res.status(200).json({
       success: true,
       totalPages,
@@ -158,17 +138,6 @@ export const GetAllVideos = async (req, res) => {
     const { page } = req.query || 1;
 
     const cacheKey = `videos_page_${page}`; // Use page-specific cache keys
-
-    // Check if data is cached in Redis
-    const cachedData = await redisClient.get(cacheKey);
-    if (cachedData) {
-      return res.status(200).json({
-        success: true,
-        totalPages: JSON.parse(cachedData).totalPages,
-        Data: JSON.parse(cachedData).Data,
-        cache: true, // Indicating that data is from the cache
-      });
-    }
 
     const limit = 5;
     const totalCount = await Media.countDocuments({
@@ -204,13 +173,6 @@ export const GetAllVideos = async (req, res) => {
           userName: video.creator.userName,
         };
       })
-    );
-
-    // Store the result in Redis with a timeout (TTL) of 1 hour (3600 seconds)
-    await redisClient.setEx(
-      cacheKey,
-      3600,
-      JSON.stringify({ totalPages, Data })
     );
 
     res.status(200).json({
@@ -278,19 +240,6 @@ export const GetAllMedia = async (req, res) => {
   try {
     const { page } = req.query || 1;
 
-    const cacheKey = `media_page_${page}`; // Create a unique cache key for each page
-
-    // Check if data is cached in Redis
-    const cachedData = await redisClient.get(cacheKey);
-    if (cachedData) {
-      return res.status(200).json({
-        success: true,
-        totalPages: JSON.parse(cachedData).totalPages,
-        Data: JSON.parse(cachedData).Data,
-        cache: true, // Indicating that data is from the cache
-      });
-    }
-
     const limit = 5;
 
     const totalCount = await Media.countDocuments({
@@ -328,12 +277,6 @@ export const GetAllMedia = async (req, res) => {
           userName: media.creator.userName,
         };
       })
-    );
-    // Store the result in Redis with a TTL (Time-to-Live) of 1 hour (3600 seconds)
-    await redisClient.setEx(
-      cacheKey,
-      3600,
-      JSON.stringify({ totalPages, Data })
     );
 
     res.status(200).json({
