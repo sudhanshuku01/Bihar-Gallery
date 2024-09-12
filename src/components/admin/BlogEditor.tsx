@@ -76,7 +76,7 @@ const BlogEditor: React.FC<blogeditorProps> = ({ html, setHtml }) => {
     "color",
     "clean",
   ];
-
+  console.log(html)
   return (
     <div className="blogeditor">
       <p className="title">Editor Content</p>

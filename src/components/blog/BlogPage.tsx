@@ -24,42 +24,39 @@ const BlogPage = () => {
   const [title, setTitle] = useState<string>("");
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
-  useEffect(() => {
-    const updateImageSources = async () => {
-      if (contentRef.current) {
-        const images = contentRef.current.querySelectorAll("img");
-        images.forEach(async (img) => {
-          const originalSrc = img.getAttribute("src");
-          console.log(originalSrc);
+  const updateImageSources = async (htmlContent: string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlContent, "text/html");
+    const images = doc.querySelectorAll("img");
 
-          // Extract the path from the URL
-          if (originalSrc) {
-            const urlParts = new URL(originalSrc);
-            let path = urlParts.pathname;
+    await Promise.all(
+      Array.from(images).map(async (img) => {
+        const originalSrc = img.getAttribute("src");
 
-            if (path.startsWith("/bihar-gallery/")) {
-              path = path.substring("/bihar-gallery/".length);
-            }
+        if (originalSrc) {
+          const urlParts = new URL(originalSrc);
+          let path = urlParts.pathname;
 
-            console.log(path);
-
-            try {
-              const response = await axios.get(
-                `${
-                  import.meta.env.VITE_API_BASE_URL
-                }/api/blog/getImage?key=${path}`
-              );
-              img.setAttribute("src", response.data);
-            } catch (error) {
-              console.error("Error fetching signed URL:", error);
-            }
+          if (path.startsWith("/bihar-gallery/")) {
+            path = path.substring("/bihar-gallery/".length);
           }
-        });
-      }
-    };
 
-    updateImageSources();
-  }, [html]);
+          try {
+            const response = await axios.get(
+              `${
+                import.meta.env.VITE_API_BASE_URL
+              }/api/blog/getImage?key=${path}`
+            );
+            img.setAttribute("src", response.data); // Update the image source
+          } catch (error) {
+            console.error("Error fetching signed URL:", error);
+          }
+        }
+      })
+    );
+
+    return doc.body.innerHTML; // Return the updated HTML content
+  };
 
   const fetchGetPost = async () => {
     try {
@@ -134,14 +131,19 @@ const BlogPage = () => {
   };
 
   useEffect(() => {
-    if (!data) {
-      fetchGetPost();
-    } else {
-      setTitle(data.title);
-      setHtml(data.html);
-      setDescription(data.description);
-      setTags(data.tags);
-    }
+    const fetchAndUpdatePost = async () => {
+      if (!data) {
+        await fetchGetPost();
+      } else {
+        setTitle(data.title);
+        const updatedHtml = await updateImageSources(data.html);
+        setHtml(updatedHtml);
+        setDescription(data.description);
+        setTags(data.tags);
+      }
+    };
+
+    fetchAndUpdatePost();
   }, [data]);
 
   const checkAdmin = async (userId: string) => {

@@ -212,7 +212,7 @@ const MediaPage = () => {
                 }
                 alt="user image"
               />
-              <Link to={`/${data.media.creator.userName}`}>
+              <Link to={`/user/${data.media.creator.userName}`}>
                 {data.media.creator.userName}
               </Link>
             </div>
