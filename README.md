@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# Bihar Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bihar Gallery is a web platform showcasing the rich history, culture, and diversity of Bihar. The platform allows users to explore blogs, images, and videos that highlight the essence of Bihar. Authenticated users can upload their media (audio and video) to contribute to the platform's growing collection. The project is designed to provide a seamless and engaging experience for users, with robust authentication and a responsive design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### General Features
 
-## Expanding the ESLint configuration
+- **Explore Bihar's Heritage**: Access blogs, images, and videos highlighting the state's culture and history.
+- **Responsive Design**: Fully optimized for devices of all screen sizes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### User Features
 
-- Configure the top-level `parserOptions` property like this:
+- **User Authentication**: Secure login and registration using JSON Web Tokens (JWT).
+- **Media Upload**: Authenticated users can upload audio and video content directly from their devices.
+- **Dashboards**:
+  - **User Dashboard**: Update user profile and visit profiles of other users with proper authentication.
+  - **Admin Dashboard**: Manage users and content.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Technical Features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **SEO Optimization**: Implemented React Helmet for metadata and improved Google ranking.
+- **Media Storage**: Audio and video files are stored in Google Cloud Storage with signed URLs for secure upload and retrieval.
+- **RESTful API**: Axios is used to handle API requests for seamless data integration.
+
+## Tech Stack
+
+### Frontend
+
+- **Framework**: React with TypeScript
+- **Styling**: Pure CSS
+- **SEO Optimization**: React Helmet
+
+### Backend
+
+- **Framework**: Node.js with Express.js
+- **Authentication**: JWT-based authentication
+
+### Database
+
+## Google Cloud Storage for media files
+
+### Deployment
+
+- Fully responsive design, ensuring compatibility across devices.
